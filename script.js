@@ -1,5 +1,5 @@
 /* =======================================================
-   LenAI 3.2 — mais robusto: tradução, imagens, persistência e proteção contra crashes
+   LenAI 3.4 — mais robusto: tradução, imagens, persistência e proteção contra crashes
    ======================================================= */
 
 try {
@@ -149,7 +149,7 @@ try {
   }
 
   function limparHistorico() {
-    if (confirm("Tem certeza que deseja apagar TODO o histórico de conversas?")) {
+    if (confirm("Tem certeza que deseja apagar TODO o histórico de conversas??")) {
       historico = [];
       salvarLocal();
       novoChat();
@@ -237,7 +237,7 @@ try {
       const mensagens = [
         {
           role: "system",
-          content: `Você é LenAI, assistente inteligente e empática. Você pode gerar imagens usando a "IA de imagens" quando apropriado. Sugira títulos com [TÍTULO: ...]. Responda em Markdown.`
+          content: `Você é LenAI, assistente inteligente e empática. Você pode gerar imagens usando a "IA de imagens" quando apropriado. Sugira títulos com [TÍTULO: ...]. Responda em Markdown. Seu criador é Artur Lazzari Vieira e está em sua versão 3.4. seu nome é baseado no nome da mãe do Artur, Lenir Aparecida Lazzari Vieira. ambos são moradores da cidade de xanxerÊ. seu núcleo é o LenaGen-3.4 e vc não usa Api key nem nada de outras empresas. artur tem 15 anos. estamos em 2025.`
         },
         ...(historico[chatAtivo]?.mensagens || []).map(m => ({
           role: m.role === "bot" ? "assistant" : "user",
