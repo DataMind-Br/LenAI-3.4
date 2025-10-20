@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>LenAI 2.7</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Ícone -->
+  <link rel="icon" href="img.png" type="image/png" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="logo.png" alt="LenAI logo">
+      </div>
+
+      <button id="novoChatBtn">+ Novo chat</button>
+
+      <h3>Histórico</h3>
+      <ul id="historico"></ul>
+
+      <div class="config">
+        <button id="keysBtn">🔑 Suas Keys</button>
+        <button id="temaBtn">🌓 Tema</button>
+      </div>
+    </aside>
+
+    <!-- Chat principal -->
+    <main class="chat-area">
+      <div id="chat" class="chat">
+        <div class="bot msg">
+          👋 Olá! Eu sou <b>LenAI 2.7</b>, sua assistente baseada na arquitetura <b>LenaGen-2.7</b>.<br>
+          Como posso ajudar?
+        </div>
+      </div>
+
+      <footer>
+        <input id="msg" type="text" placeholder="Digite uma mensagem e pressione Enter..." />
+        <button id="enviarBtn"></button>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Modal Keys -->
+  <div id="keysModal" class="modal">
+    <div class="modal-content">
+      <h2>Suas Keys</h2>
+
+      <label>OpenAI Key:
+        <input type="password" id="openaiKey" placeholder="sk-..." />
+      </label>
+
+      <label>Gemini Key:
+        <input type="password" id="geminiKey" placeholder="AIza..." />
+      </label>
+
+      <label>Claude Key:
+        <input type="password" id="claudeKey" placeholder="claude-key..." />
+      </label>
+
+      <div class="modal-actions">
+        <button id="salvarKeys">Salvar</button>
+        <button id="fecharKeys">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bibliotecas -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
