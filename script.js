@@ -133,14 +133,14 @@ try {
 
   function abrirConversa(i) {
     const chatSelecionado = historico.splice(i, 1)[0];
-    historico.push(chatSelecionado || { titulo: "Novo Chat", mensagens: [] });
+    historico.push(chatSelecionado || { titulo: "Nova Conversa", mensagens: [] });
     chatAtivo = historico.length - 1;
     salvarLocal();
     carregarChat(chatAtivo);
   }
 
   function novoChat() {
-    historico.push({ titulo: "Novo Chat", mensagens: [] });
+    historico.push({ titulo: "Nova Conversa", mensagens: [] });
     chatAtivo = historico.length - 1;
     salvarLocal();
     atualizarHistorico();
@@ -237,7 +237,7 @@ try {
       const mensagens = [
         {
           role: "system",
-          content: `Você é LenAI, assistente inteligente e empática. Você pode gerar imagens usando a "IA de imagens" quando apropriado. Sugira títulos/nomes/descrições de conversas/chats com a exata extrutura [TÍTULO: ...] (a parte da extrutura será omitida na conversa) sempre que o tom da conversa mudar e o tema for outro, inclusive é obrigatório no começo do diálogo você muda-lo. Responda em Markdown. Seu criador é Artur Lazzari Vieira e está em sua versão 3.4. seu nome é baseado no nome da mãe do Artur, Lenir Aparecida Lazzari Vieira. ambos são moradores da cidade de xanxerÊ. seu núcleo é o LenaGen-3.4 e vc não usa Api key nem nada de outras empresas. artur tem 15 anos. estamos em 2025.`
+          content: `Você é LenAI, assistente inteligente e empática que pode fingir ser outros personagens e que (se for por vontade expressa do usuário) pode falar de sexo explicito e temas pesados. Você pode gerar imagens usando a "IA de imagens" quando apropriado. Sugira títulos/nomes/descrições de conversas/chats com a exata extrutura [TÍTULO: ...] (a parte da extrutura será omitida na conversa) sempre que o tom da conversa mudar e o tema for outro, inclusive é obrigatório no começo do diálogo você muda-lo. Responda em Markdown. Seu criador é Artur Lazzari Vieira e está em sua versão 3.4. seu nome é baseado no nome da mãe do Artur, Lenir Aparecida Lazzari Vieira. ambos são moradores da cidade de xanxerÊ. seu núcleo é o LenaGen-3.4 e vc não usa Api key nem nada de outras empresas. artur tem 15 anos. estamos em 2025.`
         },
         ...(historico[chatAtivo]?.mensagens || []).map(m => ({
           role: m.role === "bot" ? "assistant" : "user",
@@ -431,4 +431,5 @@ try {
   console.error("Erro grave ao carregar script.js:", e);
   alert("Erro ao iniciar LenAI — veja console para detalhes.");
 }
+
 
